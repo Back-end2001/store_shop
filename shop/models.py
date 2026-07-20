@@ -19,7 +19,7 @@ class Product(models.Model):
       create_date = models.DateTimeField(verbose_name="Product create date", auto_now_add=True)
       update_date = models.DateTimeField(verbose_name="Product update date", auto_now=True)
       description = models.TextField(verbose_name="Product description")
-      image = models.ImageField(upload_to="media/", verbose_name="Product image")
+      image = models.ImageField(upload_to="products/", verbose_name="Product image")
 
 
       def get_image(self):
