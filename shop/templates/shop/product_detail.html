@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main %}
+
+<div class="container mt-5 mb-5">
+
+    <div class="row">
+
+        <div class="col-md-6">
+
+            <img src="{{ product.image.url }}"
+                 class="img-fluid rounded shadow"
+                 data-bs-toggle="modal"
+                 data-bs-target="#imageModal"
+                 style="cursor:pointer;">
+        </div>
+
+        <div class="col-md-6">
+            <h2>{{ product.name }}</h2>
+            <hr>
+            <h3 class="text-primary">
+                {{ product.price }} so'm
+            </h3>
+
+            <p class="mt-4">
+                {{ product.description }}
+            </p>
+            <button class="btn btn-primary btn-lg">
+                <a href="{% url 'add_to_cart' product.id %}">
+                    Savatga qo'shish
+                </a>
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Modal -->
+
+<div class="modal fade" id="imageModal">
+
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+
+        <div class="modal-content">
+
+            <div class="modal-body text-center">
+
+                <img src="{{ product.image.url }}"
+                     class="img-fluid">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

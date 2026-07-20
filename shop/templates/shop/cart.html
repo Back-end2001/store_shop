@@ -1,0 +1,161 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
+<div class="container py-5">
+
+    <h2 class="mb-4">🛒 Savat</h2>
+
+    <div class="table-responsive">
+
+        <table class="table table-bordered align-middle text-center shadow">
+
+            <thead class="table-dark">
+
+            <tr>
+                <th>Rasm</th>
+                <th>Mahsulot</th>
+                <th>Narx</th>
+                <th>Soni</th>
+                <th>Jami</th>
+                <th>Amal</th>
+            </tr>
+
+            </thead>
+
+            <tbody>
+
+            {% for product in products %}
+
+            <tr>
+
+                <td width="150">
+
+                    <img src="{{ product.image.url }}"
+                         class="img-fluid rounded"
+                         style="width:120px;height:120px;object-fit:cover;">
+
+                </td>
+
+                <td>
+
+                    <h5>{{ product.name }}</h5>
+
+                    <small class="text-muted">
+                        {{ product.description|truncatewords:10 }}
+                    </small>
+
+                </td>
+
+                <td>
+
+                    <strong>{{ product.price }} so'm</strong>
+
+                </td>
+
+                <td>
+
+                    <div class="d-flex justify-content-center align-items-center">
+
+                        <a href="{% url 'decrease_quantity' product.id %}"
+                           class="btn btn-outline-danger btn-sm">
+                            -
+                        </a>
+
+                        <span class="mx-2">{{ product.quantity }}</span>
+
+                        <a href="{% url 'increase_quantity' product.id %}"
+                           class="btn btn-outline-success btn-sm">
+                            +
+                        </a>
+
+                    </div>
+
+                </td>
+
+                <td>
+
+                    <strong class="text-success">
+
+                        {{ product.subtotal }} so'm
+
+                    </strong>
+
+                </td>
+
+                <td>
+
+                    <a href="{% url 'remove_from_cart' product.id %}"
+                       class="btn btn-danger">
+
+                        O'chirish
+
+                    </a>
+
+                </td>
+
+            </tr>
+
+            {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <div class="row mt-5">
+
+        <div class="col-md-6"></div>
+
+        <div class="col-md-6">
+
+            <div class="card shadow">
+
+                <div class="card-body">
+
+                    <h3 class="mb-3">
+
+                        Umumiy narx
+
+                    </h3>
+
+                    <hr>
+
+                    <h2 class="text-success">
+
+                        {{ total }} so'm
+
+                    </h2>
+
+                    <a href="{% url 'payment_success' %}" class="btn btn-primary">
+                        Click orqali to'lash
+                    </a>
+
+
+                    <a href="{% url 'index' %}"
+                       class="btn btn-warning btn-lg w-100 mt-5">
+
+                        Ortga qaytish
+
+                    </a>
+
+                    <a href="{% url 'checkout' %}"
+                       class="btn btn-success btn-lg w-100 mt-3">
+
+                        Buyurtma berish
+
+                    </a>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

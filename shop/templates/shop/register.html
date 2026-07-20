@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main %}
+
+<link rel="stylesheet" href="{% static 'css/style_register.css' %}">
+
+
+<div class="bg-img"></div>
+
+<div class="container">
+    <div class="form">
+
+        <div class="toggle-btns">
+            <div id="toggle"></div>
+            <button type="button" id="login-toggleBtn" class="login-btn">Login</button>
+            <button type="button" id="register-toggleBtn" class="register-btn">Register</button>
+        </div>
+
+        <!-- Login Form -->
+        <form method="POST" id="login">
+            {% csrf_token %}
+            <div class="username">
+                <h1>username</h1>
+                <input name="username" id="username" class="input" type="text" required>
+            </div>
+
+            <div class="password">
+                <h1>password</h1>
+                <label for="password">{{ form.password1 }}</label>
+                <input name="password" id="password" class="input" type="password" required>
+            </div>
+
+            <div class="checkbox">
+                <input type="checkbox" id="checkbox">
+                <label for="checkbox">Remember Me</label>
+            </div>
+            <div class="submit-btn">
+                <button type="submit" id="login-btn">
+                    Login
+                </button>
+            </div>
+        </form>
+
+        <!-- Register Form -->
+        <form method="POST" id="register">
+            {% csrf_token %}
+            <div class="username">
+                <h1>username</h1>
+                <label for="username-reg">{{ form.username }}</label>
+                <input name="username" id="username-reg" class="input" type="text" required>
+            </div>
+
+            <div class="email">
+                <h1>email</h1>
+                <label for="email">{{ form.email }}</label>
+                <input name="email" id="email" class="input" type="email" required>
+            </div>
+
+            <div class="password">
+                <h1>password1</h1>
+                <label for="password-reg">{{ form.password1 }}</label>
+                <input name="password1" id="password-reg" class="input" type="password" required>
+            </div>
+
+            <div class="password">
+
+                <label for="password2-reg">{{ form.password1 }}</label>
+                <input name="password2" id="password2-reg" class="input" type="password" required>
+            </div>
+
+            <div class="submit-btn">
+                <button type="submit" id="register-btn">
+                    Register
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+</div>
+
+<script src="{% static 'js/app.js' %}">
+
+</script>
+
+{% endblock %}

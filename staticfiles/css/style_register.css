@@ -1,0 +1,423 @@
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* <-----CSS RESET-----> */
+
+/* Setting the font */
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+}
+
+/* Setting background image */
+.bg-img {
+  z-index: 0;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  background-image: url('https://wallpaperaccess.com/full/366398.jpg');
+}
+
+/* Container for the form */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+/* Container for form elements */
+.form {
+  /* centering the form */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  /* sizing */
+  height: 620px;
+  width: 460px;
+  border-radius: 10px;
+  background-color: white;
+
+  /* --------------------------------- */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+
+}
+
+/* Div containing the login/register submit buttons */
+.submit-btn {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.submit-btn button {
+  font-size: 24px;
+  background-color: #2691d9;
+  color: white;
+  border: 1px solid transparent;
+  border-radius: 50px;
+  width: 180px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* the login form */
+#login {
+  position: relative;
+  top: 170px;
+  left: 5px;
+  margin-bottom: 20px;
+  transition: all 0.5s ease-in-out;
+}
+
+/* positioning the submit button in login form */
+#login-btn {
+  position: relative;
+  top: -35px;
+}
+
+/* register form */
+#register {
+  position: relative;
+  top: -180px;
+  left: 450px;
+  transition: all 0.5s ease-in-out;
+}
+
+/* positioning the register form */
+#register-btn {
+  position: relative;
+  top: -95px;
+
+}
+
+/* div for the three types of input */
+.username,
+.password,
+.email {
+  text-align: start;
+  margin-bottom: 10px;
+}
+
+/* styling the label for the inputs */
+.username label,
+.password label,
+.email label {
+  color: rgb(130, 130, 130);
+  position: relative;
+  top: 30px;
+  right: 15px;
+  transition: all 0.45s ease ;
+}
+
+/* this class is added when the input is clicked on */
+.active {
+  color: #2691d9 !important;
+  top: 0px !important;
+  right: 18px !important;}
+
+/* all text inputs */
+.input {
+  width: 100%;
+  padding: 10px;
+  background: none;
+  border-top: 0px;
+  border-right: 0px;
+  border-left: 0px;
+  border-bottom: 1px solid rgb(170, 170, 170);
+  position: relative;
+  left: -20px;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+/* changing border bottom color on focus */
+.input:focus {
+  outline: none;
+  border-bottom: 1px solid #2691d9;
+  transition: all 0.2s ease;
+}
+
+/* the only checkbox div on login for, */
+.checkbox {
+  margin-bottom: 20px;
+   position: relative;
+  top: 15px;
+  left: -110px;
+  accent-color: #2393de;
+}
+input[type='checkbox'] {
+  cursor: pointer;
+}
+
+/* form type toggle button div */
+.toggle-btns {
+  height:45px;
+  z-index: 1;
+  position: relative;
+  top: 110px;
+  box-shadow: inset 2px 2px 4px #d1d9e6, inset -2px -2px 4px #f9f9f9;
+  border: 1px solid transparent;
+  border-radius:50px;
+}
+
+/* the blue background behind the toggle buttons which moves on toggle */
+#toggle {
+  position: absolute;
+  left: -5px;
+  z-index: 0;
+  width: 100px;
+  height: 45px;
+  background-color: #2691d9;
+  border: 1px solid transparent;
+  border-radius: 50px;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid transparent;
+}
+
+/* the login toggle button */
+.login-btn {
+  background-color: transparent;
+  color: black;
+  border: 1px solid transparent;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 50px;
+  width: 100px;
+  color: white;
+  position: relative;
+  left: -5px;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+/* the register toggle button */
+.register-btn {
+  background-color: transparent;
+  font-size: 20px;
+  border: 1px solid transparent;
+  padding: 10px;
+  width: 100px;
+  position: relative;
+  left:0px;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+/* div for the social media buttons. */
+.social-icons {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+  width: 200px;
+  height: 50px;
+  border: none;
+  margin: auto;
+  box-shadow: inset 2px 2px 4px #d1d9e6, inset -2px -2px 4px #f9f9f9;
+  border-radius: 15px;
+}
+
+/* icons on login form */
+.form1-icons {
+  top: 40px;
+}
+
+/* icons on register form */
+.form2-icons {
+  top: 20px;
+}
+
+/* the individual buttons in the social icons div */
+.social-icons button {
+  font-size: 25px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  background-color:white;
+}
+
+/* positioning the icons because they were a bit out of place naturally. (taken from ion icons) */
+ion-icon {
+  position: relative;
+  top: 2px;
+}
+
+/* positioning and styling the circle behind the first icon that grows on hover.*/
+.circle-1 {
+  position: absolute;
+  top: 23px;
+  left: 32px;
+  z-index: 0;
+  width: 1px;
+  height: 1px;
+  background-color: white;
+  border: 1px solid transparent;
+  border-radius: 50px;
+}
+
+/* same as above for second icon */
+.circle-2 {
+  position: absolute;
+  top: 22px;
+  left: 98px;
+  z-index: 0;
+  width: 1px;
+  height: 1px;
+  background-color: white;
+  border: 1px solid transparent;
+  border-radius: 50px;
+}
+/* same as above for third icon */
+.circle-3 {
+  position: absolute;
+  top: 22px;
+  left: 165px;
+  z-index: 0;
+  width: 1px;
+  height: 1px;
+  background-color: white;
+  border: 1px solid transparent;
+  border-radius: 50px;
+}
+
+
+/* hover effects for the devices which can hover */
+@media ( hover: hover){
+ .logo-apple:hover > .circle-1 {
+  transform: scale(12);
+  background-color: black;
+  transition: transform 0.2s ease-in-out;
+}
+
+.logo-apple:hover ion-icon {
+  color: white;
+  transition: 0.3s ease-in;
+}
+.logo-google:hover > .circle-2 {
+  transform: scale(12);
+/* Google red color */
+  background-color: #db4437;
+  transition: transform 0.2s ease-in-out;
+}
+
+.logo-google:hover ion-icon {
+  color: white;
+  transition: 0.3s ease-in;
+}
+.logo-facebook:hover > .circle-3 {
+  transform: scale(12);
+/* Facebook blue color */
+  background-color: #4267b2;
+  transition: transform 0.3s ease-in-out;
+}
+
+.logo-facebook:hover ion-icon {
+  color: white;
+  transition: 0.3s ease-in;
+  }
+}
+
+/* removes the hover effects for the buttons and changes color of the icons */
+@media(hover:none){
+  .logo-google ion-icon{color:#db4437;}
+  .logo-facebook ion-icon {color:#4267b2;}
+}
+
+/* breakpoints */
+@media (max-width: 500px) {
+  .bg-img {
+    background: white;
+  }
+  .toggle-btns {
+    top: 80px;
+  }
+  #login {
+    top: 160px;
+  }
+  #register {
+    top: -190px;
+  }
+  .form {
+    height: 100%;
+    width: 100%;
+  }
+  .checkbox {
+    left: -10px;
+  }
+  #login-btn {
+    top: -20px;
+  }
+  #register-btn {
+    top: -90px;
+  }
+}
+
+@media (max-width: 380px) {
+  body {
+    font-size: 16px;
+  }
+  .input {
+    margin-bottom: 10px;
+    margin-left: 50px;
+    width: 80%;
+  }
+  .checkbox {
+    top: 20px;
+  }
+
+  .username label,
+  .password label,
+  .email label {
+    margin-left: 40px;
+  }
+}
